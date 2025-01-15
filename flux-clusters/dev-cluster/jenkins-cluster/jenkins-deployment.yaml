@@ -20,26 +20,4 @@ spec:
         image: jenkins/jenkins:2.329
         ports:
         - containerPort: 8080
-        env:
-        - name: JENKINS_OPTS
-          value: "--httpPort=8080"
-        volumeMounts:
-        - name: jenkins-home
-          mountPath: /var/jenkins_home
-      volumes:
-      - name: jenkins-home
-        persistentVolumeClaim:
-          claimName: jenkins-pvc
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: jenkins-pvc
-  namespace: default
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 3Gi
 
