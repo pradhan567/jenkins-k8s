@@ -27,5 +27,5 @@ spec:
     - name: jenkins-home
       hostPath: 
         path: /opt/jenkins_home
-        type: FileOrCreate
+        type: DirectoryOrCreate
 
