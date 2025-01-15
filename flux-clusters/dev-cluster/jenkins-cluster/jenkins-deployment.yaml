@@ -23,9 +23,8 @@ spec:
         volumeMounts:
         - name: jenkins-home
           mountPath: /var/jenkins_home
-  volumes:
-    - name: jenkins-home
-      hostPath: 
-        path: /opt/jenkins_home
-        type: DirectoryOrCreate
-
+      volumes:
+      - name: jenkins-home
+        hostPath:
+          path: /opt/jenkins_home
+          type: DirectoryOrCreate
