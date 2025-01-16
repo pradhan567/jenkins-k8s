@@ -5,7 +5,7 @@ metadata:
   namespace: jenkins
 spec:
   type: slack
-  channel: general
+  channel: jenkins
   address: https://slack.com/api/chat.postMessage
   secretRef:
     name: slack-bot-token
