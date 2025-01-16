@@ -4,11 +4,6 @@ metadata:
   name: on-call-webapp
   namespace: jenkins
 spec:
-  summary: "cluster addons"
-  eventMetadata:
-    env: "production"
-    cluster: "my-cluster"
-    region: "us-east-2"
   providerRef:
     name: slack-bot
   eventSeverity: info
