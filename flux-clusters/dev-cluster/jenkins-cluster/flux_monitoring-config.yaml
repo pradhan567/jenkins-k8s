@@ -6,7 +6,7 @@ metadata:
   namespace: jenkins
 spec:
   interval: 1m0s
-  path: ./monitoring/controllers/kube-prometheus-stack
+  path: ./monitoring/controllers/configs
   prune: true
   sourceRef:
     kind: GitRepository
