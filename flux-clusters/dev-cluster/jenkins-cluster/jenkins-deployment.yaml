@@ -20,14 +20,3 @@ spec:
         image: jenkins/jenkins:2.401.3
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - name: jenkins-home
-          mountPath: /var/jenkins_home
-        securityContext: 
-          runAsUser: 1000 
-          runAsGroup: 1000
-      volumes:
-      - name: jenkins-home
-        hostPath:
-          path: /opt/jenkins_home
-          type: DirectoryOrCreate
