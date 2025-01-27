@@ -15,13 +15,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: jenkins-service.jenkins.svc.cluster.local
+            name: jenkins-service
             port:
               number: 8080
       - path: /bbapp
         pathType: Prefix
         backend:
           service:
-            name: block-buster-service.1-demo.svc.cluster.local
+            name: block-buster-service
             port:
               number: 80
