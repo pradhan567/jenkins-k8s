@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "tws.com"
+    http:
+      paths:
+      - path: /jenkins
+        pathType: Prefix
+        backend:
+          service:
+            name: jenkins-service
+            port:
+              number: 80
+      - path: /bbapp
+        pathType: Prefix
+        backend:
+          service:
+            name: block-buster-service
+            port:
+              number: 80
