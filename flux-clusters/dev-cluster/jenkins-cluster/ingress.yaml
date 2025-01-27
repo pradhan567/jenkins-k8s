@@ -6,6 +6,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
   - host: ""
     http:
@@ -14,13 +15,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: jenkins-service
+            name: jenkins-service.jenkins-namespace.svc.cluster.local
             port:
               number: 8080
       - path: /bbapp
         pathType: Prefix
         backend:
           service:
-            name: block-buster-service
+            name: block-buster-service.bbapp-namespace.svc.cluster.local
             port:
               number: 80
